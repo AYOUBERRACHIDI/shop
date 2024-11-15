@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import panierIcon from '../images/panier.png';
 import userIcon from '../images/user.png';
 import loupeIcon from '../images/loupe.png';
+import Youssef from '../images/youssef.jpeg';
 
 const Header = ({ products, onSearch, toggleTheme }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -30,7 +31,9 @@ const Header = ({ products, onSearch, toggleTheme }) => {
       <HeaderContainer>
         <div>
           <NavLink to="/" activeClassName="active">
-            <h1>Youssef</h1>
+          <NavItem> 
+            <Icon src={Youssef} alt="Youssef" className='youssef'/> 
+          </NavItem>
           </NavLink>
         </div>
 
@@ -161,14 +164,25 @@ const Icon = styled.img`
   width: 25px;
   height: 25px;
   transition: filter 0.3s ease, transform 0.3s ease;
-
+  
+  
   filter: ${({ theme }) => (theme.mode === 'dark' ? 'invert(1)' : 'none')};
 
   &:hover {
     filter: ${({ theme }) => (theme.mode === 'dark' ? 'invert(0.8)' : 'invert(0.6)')};
     transform: scale(1.1);
   }
+
+  /* Targeting the Youssef icon */
+  &.youssef {
+    width: 70px; /* Adjust Youssef's icon size */
+    height: 70px;
+    border-radius: 50%; /* Optional: Make Youssef's icon circular */
+    filter: none; /* Remove filter effect if you don't want it */
+    transition: none; /* Optional: remove transition for Youssef's icon */
+  }
 `;
+
 
 const SubNavbar = styled.nav`
   display: flex;
